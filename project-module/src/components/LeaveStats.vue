@@ -79,8 +79,8 @@ button {
 
 .card {
     margin-left: 230px;
-    width: 420px;
-    height: 270px;
+    width: 500px;
+    height: 350px;
     background-color: white;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -97,7 +97,7 @@ button {
 }
 
 .leaveRow {
-    width: 230px;
+    width: 150px;
     text-align: start;
 }
 
