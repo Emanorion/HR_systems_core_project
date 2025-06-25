@@ -5,6 +5,7 @@ import Overview from '@/views/Overview.vue'
 import LeaveForm from '@/views/LeaveForm.vue'
 import Payroll from '@/views/Payroll.vue'
 import PayslipComp from '@/components/PayslipComp.vue'
+import LoginView from '@/views/LoginView.vue'
 
 const routes = [
   {
@@ -39,6 +40,11 @@ const routes = [
     path: '/payslip/:id',
     name: 'PayslipComp',
     component: PayslipComp 
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: LoginView
   }
 ]
 
