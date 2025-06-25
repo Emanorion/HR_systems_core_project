@@ -4,7 +4,6 @@
         <p><i class="icon fa fa-fw fa-home"></i>Dashboard</p>
     </div>
     <div class="items">
-    <router-link to="/about" class="dashItems">about</router-link>
     <p><i class="fa fa-credit-card"></i> Payroll</p>
     <p><i class="fa fa-money-bill"></i>money</p>
     <p><i class="fa fa-user" aria-hidden="true"></i>Employees</p>

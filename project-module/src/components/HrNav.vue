@@ -1,7 +1,6 @@
 <template>
     <nav class="hrBar">
         <div class="navElements">
-            <router-link to="about">About</router-link>
             <router-link to="/">Home</router-link>
         </div>
     </nav>
