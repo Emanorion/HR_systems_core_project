@@ -1,4 +1,9 @@
 <template>
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link> |
+    <router-link to="/payroll">Payroll</router-link>
+  </nav>
   <router-view/>
 </template>
 
@@ -44,6 +49,7 @@ nav a:hover{
 h3{
   margin: 0;
   color: #d3d7db;
+  color: #2c3e50;
 }
 
 nav a.router-link-exact-active {

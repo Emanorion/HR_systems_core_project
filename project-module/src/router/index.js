@@ -1,7 +1,12 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+<<<<<<< HEAD
 import Overview from '@/views/Overview.vue'
 import LeaveForm from '@/views/LeaveForm.vue'
+=======
+import Payroll from '@/views/Payroll.vue'
+import PayslipComp from '@/components/PayslipComp.vue'
+>>>>>>> 8c7890a (:ambulance:)
 
 const routes = [
   {
@@ -20,6 +25,7 @@ const routes = [
     }
   },
   {
+<<<<<<< HEAD
     path: '/overview',
     name: 'overview',
     component: Overview
@@ -28,6 +34,16 @@ const routes = [
     path: '/leaveform',
     name: 'leaveform',
     component: LeaveForm
+=======
+    path: '/payroll',
+    name: 'payroll',
+    component: Payroll
+  },
+  {
+    path: '/payslip/:id',
+    name: 'PayslipComp',
+    component: PayslipComp 
+>>>>>>> 8c7890a (:ambulance:)
   }
 ]
 

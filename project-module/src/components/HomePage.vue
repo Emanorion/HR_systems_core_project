@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
     <header class="greeting">
         <h1>Welcome user</h1>
         <router-link to="/overview">
@@ -26,3 +27,13 @@ export default {
     font-weight: 300;
 }
 </style>
+=======
+    <p>This is our home page</p>
+</template>
+
+<script>
+    export default {
+        name: 'HomePage'
+    }
+</script>
+>>>>>>> 8c7890a (:ambulance:)
