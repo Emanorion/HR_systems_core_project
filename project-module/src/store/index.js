@@ -2,7 +2,6 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-<<<<<<< HEAD
   attendanceAndLeave: [
         {
             "employeeId": 1,
@@ -350,8 +349,6 @@ export default createStore({
             ]
         }
       ]
-=======
->>>>>>> 8c7890a (:ambulance:)
   },
   getters: {
   },
