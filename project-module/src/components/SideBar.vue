@@ -1,40 +1,49 @@
 <template>
-<div class="sideBar">
-    <div class="sidebar-title">
-        <p><i class="icon fa fa-fw fa-home"></i>Dashboard</p>
+    <div class="sideBar">
+        <div class="sidebar-title">
+            <p><i class="fa fa-fw fa-home"></i>Dashboard</p>
+        </div>
+        <div class="items">
+            <p class="icon"><router-link to="/payroll"><i class="fa fa-credit-card"></i>Payroll</router-link></p>
+            <p class="icon"><router-link to="/Employees"><i class="fa fa-user" aria-hidden="true"></i> Employees</router-link></p>
+        </div>
     </div>
-    <div class="items">
-    <p><i class="fa fa-credit-card"></i> Payroll</p>
-    <p><i class="fa fa-money-bill"></i>money</p>
-    <p><i class="fa fa-user" aria-hidden="true"></i>Employees</p>
-    </div>
-</div>
 
 </template>
 
 <script>
-    export default{
-        name: 'Dashboard'
-    }
+import router from '@/router';
+
+export default {
+    name: 'Dashboard'
+}
 </script>
 <style>
-.icon{
-    width: 50px;
+.fa{
+    color: aquamarine;margin-right: 5px;
+
 }
-.sidebar-title{
+.sidebar-title {
     font-size: 25px;
     text-align: center;
 }
-.items{
+
+.items {
     color: white;
     font-size: 20px;
-    text-align: center;
+    text-align: start;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.dashItems{
+
+.dashItems {
     background-color: rgba(128, 128, 128, 0.497);
-    
+
 }
-.sideBar{
+
+.sideBar {
     background-color: #333;
     width: 200px;
     height: 100vh;
