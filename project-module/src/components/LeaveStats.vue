@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div class="card2">
         <div class="cardtop">
             <div>
                 <h3>Leave Requests</h3>
@@ -64,6 +64,7 @@ img {
 .cardtop {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 button {
@@ -77,13 +78,13 @@ button {
     color: rgb(78, 177, 216);
 }
 
-.card {
-    margin-left: 230px;
-    width: 500px;
+.card2 {
+    margin: 0;
+    width: 450px;
     height: 350px;
     background-color: white;
-    margin-bottom: 10px;
     border-radius: 10px;
+    box-shadow: 0 4px 16px 0 rgba(8, 14, 20, 0.312);
 }
 
 .Laeveimg {
@@ -97,7 +98,7 @@ button {
 }
 
 .leaveRow {
-    width: 150px;
+    width: 200px;
     text-align: start;
 }
 
