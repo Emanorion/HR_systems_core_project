@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import EmployeeView from '@/views/EmployeeView.vue'
 import Overview from '@/views/Overview.vue'
 import LeaveForm from '@/views/LeaveForm.vue'
 import Payroll from '@/views/Payroll.vue'
@@ -12,7 +13,14 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
+    path: '/Employees',
+    name: 'Employees',
+    component:EmployeeView
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+  },
+  {path: '/about',
     name: 'about',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
