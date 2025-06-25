@@ -1,7 +1,7 @@
 <template>
 <div>
 <div class="sidenav">
-  <button @click="setIndex(0)"> >Lungile Moyo</button>
+ <button @click="setIndex(0)"> >Lungile Moyo</button>
  <button @click="setIndex(1)"> Sibongile Nkosi</button>
  <button @click="setIndex(2)"> Thabo Molefe</button>
  <button @click="setIndex(3)"> Keshav Naidoo</button>
