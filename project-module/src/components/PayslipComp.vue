@@ -17,7 +17,7 @@
         <br>
 
         <!-- EARNINGS TABLE -->
-        <div class="table-wrapper">
+        <div class="table-wrap">
             <table class="earnings-table">
                 <thead>
                     <tr>
@@ -44,7 +44,7 @@
         <br> <br>
 
         <!-- DEDUCTIONS TABLE -->
-        <div class="table-wrapper">
+        <div class="table-wrap">
             <table class="deductions-table">
                 <thead>
                     <tr>
@@ -96,20 +96,43 @@ export default {
 </script>
 
 <style>
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
 .heading {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
 }
 
+/* CSS EMPLOYEE INFORMATION */
 .emp-info {
     text-align: left;
 }
 
-.table-wrapper {
-    width: 100%;
+/* CSS TABLES */
+.table-wrap {
+    width: 80%;
     overflow-x: auto;
+}
+
+.earnings-table,
+.deductions-table {
+    margin: 0 auto;
+}
+
+.earnings-table td,
+.deductions-table td {
+    border-bottom: none;
+}
+
+.earnings-table th,
+.deductions-table th {
+    border-bottom: 1px solid black;
 }
 
 .earnings-table,
