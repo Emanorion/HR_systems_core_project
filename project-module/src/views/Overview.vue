@@ -1,8 +1,11 @@
 <template>
     <div class="overView-Layout">
         <HrNav />
-        <AttendanceStats />
+        <div class="stats">
         <LeaveStats />
+        <AttendanceStats />
+        <EmployeeReview />
+        </div>
         <EmployeeAttendance />
         <div class="dashboardLayout">
             <Dashboard />
@@ -17,6 +20,7 @@ import EmployeeAttendance from '@/components/EmployeeAttendance.vue';
 import HrNav from '@/components/HrNav.vue';
 import LeaveStats from '@/components/LeaveStats.vue';
 import AttendanceStats from '@/components/AttendanceStats.vue';
+import EmployeeReview from '@/components/EmployeeReview.vue';
 
 export default {
     components: {
@@ -24,7 +28,8 @@ export default {
         EmployeeAttendance,
         HrNav,
         LeaveStats,
-        AttendanceStats
+        AttendanceStats,
+        EmployeeReview
     }
 }
 
@@ -33,5 +38,10 @@ export default {
 .overView-Layout {
     display: flex;
     flex-direction: column;
+}
+.stats{
+    display: flex;
+    width: 1250px;
+    margin-left: 230px;
 }
 </style>
