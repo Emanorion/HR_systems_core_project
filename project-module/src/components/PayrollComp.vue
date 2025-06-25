@@ -1,4 +1,5 @@
-<template>
+ 
+ <template>
     <h1>Payroll</h1>
     <hr> <br>
 
