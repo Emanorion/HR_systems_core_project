@@ -6,37 +6,39 @@
     <!-- INFORMATION DIVS -->
     <div class="container">
         <div class="box">
-            <p class="text">Period: July 2025 | 31 Payable Days</p>
+            <p class="text">Period: July 2025 | 31 Payable Days</p> <br>
             <table class="payroll-table">
                 <tr class="costs">
                     <td class="costs"><b>R{{ PayrollCosts.toFixed(2) }}</b></td>
-                    <td width="50px"></td>
+                    <td class="space" width="50px"></td>
                     <td class="costs"><b>R{{ EmployeeNetPay.toFixed(2) }}</b></td>
                 </tr>
                 <tr>
                     <td>Payroll Costs</td>
-                    <td width="50px"></td>
+                    <td class="space" width="50px"></td>
                     <td>Employees' Net Pay</td>
                 </tr>
             </table>
         </div>
         <div class="box">
-            <p class="p">PAY DAY</p>
-            <p class="date">31 <br> July 2025</p>
-            <hr>
-            <p class="p">250  employees</p>
+            <div class="pay-day">
+                <p class="p">PAY DAY</p>
+                <p class="date">31 <br> July 2025</p>
+                <hr>
+                <p class="p">250  employees</p>
+            </div>
         </div>
         <div class="box">
-            <p class="text">Taxes & Deductions</p>
+            <p class="text">Taxes & Deductions</p> <br>
             <table class="payroll-table">
                 <tr>
                     <td class="costs"><b>#amount</b></td>
-                    <td width="50px"></td>
+                    <td class="space" width="50px"></td>
                     <td class="costs"><b>R{{ TotalDeduction.toFixed(2)}}</b></td>
                 </tr>
                 <tr>
                     <td>Taxes</td>
-                    <td width="50px"></td>
+                    <td class="space" width="50px"></td>
                     <td>Total Deduction</td>
                 </tr>
             </table>
@@ -115,6 +117,7 @@ h1 {
     font-size: 60px;
 }
 
+/* CSS INFORMATION DIVS */
 .container {
     display: flex;
     gap: 30px;
@@ -129,9 +132,17 @@ h1 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.pay-day {
+    text-align: center;
+}
+
 .text {
     text-align: left;
     font-size: 24px;
+}
+
+.payroll-table td {
+    border-bottom: none;
 }
 
 .p {
@@ -156,14 +167,17 @@ h1 {
     font-size: 26px;
 }
 
+/* CSS EMPLOYEE TABLE */
 .table-wrapper {
     width: 100%;
+    max-width: 100vw;
     overflow-x: auto;
 }
 
 .employee-table {
     width: 100%;
     min-width: 750px;
+    font-weight: 300;
 }
 
 .employee-table th {
@@ -192,6 +206,7 @@ h1 {
     cursor: pointer;
 }
 
+/* RESPONSIVENESS */
 @media (max-width: 900px) {
     .container {
         flex-direction: column;
