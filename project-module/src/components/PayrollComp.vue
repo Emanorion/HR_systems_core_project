@@ -1,6 +1,6 @@
  
  <template>
-    <h1>Payroll</h1>
+    <h1 style="margin: 30px;">Payroll</h1>
     <hr> <br>
 
     <!-- INFORMATION DIVS -->
@@ -108,10 +108,6 @@ export default {
 </script>
 
 <style>
-body {
-    margin: 0 20px;
-}
-
 h1 {
     text-align: left;
     font-size: 60px;
@@ -120,11 +116,11 @@ h1 {
 /* CSS INFORMATION DIVS */
 .container {
     display: flex;
-    gap: 30px;
-    margin: 0 30px;
+    gap:30px;
+    margin: 0 auto
 }
 
-.box {
+.box {  
     background-color: rgb(217, 210, 210);
     flex: 1;
     padding: 8px 15px;
@@ -161,6 +157,7 @@ h1 {
 .payroll-table td {
     text-align: left;
     font-size: 18px;
+    font-weight: 400;
 }
 
 .payroll-table .costs {
