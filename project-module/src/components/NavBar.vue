@@ -6,6 +6,7 @@
             <router-link to="/about" style="flex-grow: 2;">About</router-link>
             <router-link to="/overview" style="flex-grow: 1;">Overview</router-link>
             <router-link to="/leaveform">Leave Requests</router-link>
+            <router-link to="/payroll">Payroll</router-link>
         </div>
     </nav>
 </template>
