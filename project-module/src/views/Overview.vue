@@ -17,7 +17,6 @@
 <script>
 import Dashboard from '@/components/SideBar.vue';
 import EmployeeAttendance from '@/components/EmployeeAttendance.vue';
-import HrNav from '@/components/HrNav.vue';
 import LeaveStats from '@/components/LeaveStats.vue';
 import AttendanceStats from '@/components/AttendanceStats.vue';
 import EmployeeReview from '@/components/EmployeeReview.vue';
@@ -26,7 +25,6 @@ export default {
     components: {
         Dashboard,
         EmployeeAttendance,
-        HrNav,
         LeaveStats,
         AttendanceStats,
         EmployeeReview
@@ -36,6 +34,7 @@ export default {
 </script>
 <style>
 .overView-Layout {
+    margin-top:30px;
     display: flex;
     flex-direction: column;
 }

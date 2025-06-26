@@ -1,14 +1,16 @@
 <template>
-    <h1>THis is the overeall attendance</h1>
-    <div class="layout">
+    <div class="btn-return">
+        <router-link to="/overview">
+            <i class="i-arrow fa fa-arrow-left fa-lg" aria-hidden="true"></i>
+        </router-link>
+    </div>
+    <h1 class="pageTitle">THis is the overeall attendance</h1>
     <EmployeeOverallAttendance />
     <SideBar />
-    </div>
 </template>
 
 <script>
 import EmployeeOverallAttendance from '@/components/EmployeeOverallAttendance.vue';
-import HrNav from '@/components/HrNav.vue';
 import NavBar from '@/components/NavBar.vue';
 import SideBar from '@/components/SideBar.vue';
 
@@ -21,8 +23,21 @@ export default {
 }
 </script>
 <style>
-    .layout{
-        display: flex;
+    .pageTitle{
+        text-align: center;
     }
-    
+    .btn-return{
+        margin-left: 210px;
+        height: 50px;
+        width: 50px;
+        border: 2px solid #2d4257;
+        text-align: center;
+        align-content: center;
+        border-radius: 50%;
+        position: fixed;
+        margin-top: 10px;
+    }
+    .i-arrow{
+        color: #2d4257;
+    }
 </style>
