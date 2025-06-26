@@ -49,6 +49,7 @@ export default {
     height: 100vh;
     z-index: 1000;
     position: fixed;
+    overflow-y: auto;
     top: 0;
     left: 0;
 }

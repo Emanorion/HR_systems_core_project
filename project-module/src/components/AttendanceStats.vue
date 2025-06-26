@@ -25,6 +25,7 @@ export default {
 
         },
         progressBar() {
+            let progress = attendanceAndLeave.attendance[4].status
 
         }
     }

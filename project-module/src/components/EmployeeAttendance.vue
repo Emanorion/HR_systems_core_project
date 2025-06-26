@@ -6,6 +6,7 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
+                    <th scope="col">ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Date</th>
                     <th scope="col">Status</th>
@@ -14,6 +15,7 @@
             <tbody>
                 <tr v-for="stats in attendanceAndLeave" :key="stats.employeeId">
                     <th scope="row">{{ stats.employeeId }}</th>
+                    <td>EMP-909636</td>
                     <td>{{ stats.name }}</td>
                     <td>{{ stats.attendance[4].date }}</td>
                     <td>{{ stats.attendance[4].status }}</td>
@@ -69,6 +71,7 @@ export default {
         }
     },
     methods: {
+        
     }
 }
 
