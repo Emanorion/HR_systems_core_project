@@ -142,7 +142,7 @@ body {
     width: 55px;
     text-align: center;
     align-content: center;
-    border: 2px solid #1b7ad8;
+    border: 2px solid #2d4257;
     position: fixed;
     top: 30px;
     left: 30px;
@@ -172,6 +172,7 @@ body {
 .emp-info {
     text-align: left;
     font-size: 25px;
+    font-weight: 400;
 }
 
 /* CSS TABLES */

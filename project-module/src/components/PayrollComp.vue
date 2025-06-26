@@ -46,7 +46,6 @@
     </div>
 
     <!-- EMPLOYEE TABLE -->
-    <br><br>
     <div class="table-wrapper">
         <table class="employee-table">
             <thead>
@@ -65,12 +64,12 @@
                     <td>{{ info.name }}</td>
                     <td>{{ info.employeeId }}</td>
                     <td>{{ info.hoursWorked }}</td>
-                    <td>R{{ info.salary.toFixed(2) }}</td>
-                    <td>R{{ deduction(info).toFixed(2) }}</td>
-                    <td>R{{ info.finalSalary.toFixed(2) }}</td>
+                    <td>R{{ animatedSalaries[info.employeeId]?.toFixed(2) }}</td>
+                    <td>R{{ animatedDeductions[info.employeeId]?.toFixed(2) }}</td>
+                    <td>R{{ animatedFinalSalaries[info.employeeId]?.toFixed(2) }}</td>
                     <td>
                         <div class="view">
-                            <router-link :to="`/payslip/${info.employeeId}`">View</router-link>
+                            <router-link :to="`/payslip/${info.employeeId}`" class="view">View</router-link>
                         </div>
                     </td>  
                 </tr>
@@ -87,7 +86,10 @@ export default {
     data() {
         // collects data from data folder
         return {
-            payrollData: payrollData
+            payrollData: payrollData,
+            animatedSalaries: {},
+            animatedFinalSalaries: {},
+            animatedDeductions: {}
         } 
     },
     computed: {
@@ -104,7 +106,44 @@ export default {
     methods: {
         deduction(emp) {
             return (emp.salary - emp.finalSalary)
+        },
+        animatedValue(key, target, duration = 1500) {
+            const keys = key.split('.')
+            
+            const setValue = (val) => {
+                if (keys.length === 2) {
+                    this[keys[0]][keys[1]] = val
+                } else {
+                    this[key] = val
+                }
+            }
+
+            let start = 0
+            const startTime = performance.now()
+
+            const step = (currentTime) => {
+                const progress = Math.min((currentTime - startTime) / duration, 1)
+                const currentValue = +(progress * target).toFixed(2)
+                setValue(currentValue)
+
+                if (progress < 1) {
+                    requestAnimationFrame(step)
+                }
+            }
+
+            requestAnimationFrame(step)
         }
+    },
+    mounted() {
+        this.payrollData.forEach(emp => {
+            const empId = emp.employeeId
+
+            this.animatedSalaries[empId] = 0
+            this.animatedValue(`animatedSalaries.${empId}`, emp.salary)
+
+            this.animatedValue(`animatedFinalSalaries.${empId}`, emp.finalSalary)
+            this.animatedValue(`animatedDeductions.${empId}`, this.deduction(emp))
+        })
     }
 }
 </script>
@@ -119,11 +158,13 @@ h1 {
 .container {
     display: flex;
     gap:30px;
-    margin: 0 auto
+    margin: 0 auto;
+    margin-bottom: 50px;
+    color: rgb(224, 222, 222);
 }
 
 .box {  
-    background-color: rgb(217, 210, 210);
+    background-color: #2d4257;
     flex: 1;
     padding: 8px 15px;
     border-radius: 10px;
@@ -132,11 +173,13 @@ h1 {
 
 .pay-day {
     text-align: center;
+    font-weight: 200;
 }
 
 .text {
     text-align: left;
     font-size: 24px;
+    font-weight: 200;
 }
 
 .payroll-table td {
@@ -176,18 +219,21 @@ h1 {
 .employee-table {
     width: 100%;
     min-width: 750px;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .employee-table th {
     font-weight: bold;
+    font-size: 19px;
     border-bottom: 1px solid black;
-    background-color: rgb(224, 222, 222);
+    background-color: #2d4257;
+    color: white;
     padding: 10px;
 }
 
 .employee-table td {
     padding: 10px;
+    color: #2d4257;
 }
 
 .employee-table th,
@@ -198,7 +244,8 @@ h1 {
 /* VIEW BUTTON */
 .view {
     text-align: center;
-    background-color: rgb(230, 229, 229);
+    background-color: #2d4257;
+    color: rgb(224, 222, 222);
     border-radius: 40px;
     text-decoration: none;
 }
