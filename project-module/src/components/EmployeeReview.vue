@@ -13,7 +13,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     .ReviewCard{
         background-color: white;
         margin-left: 10px;

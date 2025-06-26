@@ -5,17 +5,17 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Status</th>
+                    <th class="Hrow" scope="col">#</th>
+                    <th class="Hrow" scope="col">ID</th>
+                    <th class="Hrow" scope="col">Name</th>
+                    <th class="Hrow" scope="col">Date</th>
+                    <th class="Hrow" scope="col">Status</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="stats in attendanceAndLeave" :key="stats.employeeId">
+                <tr v-for="(stats, idx) in attendanceAndLeave" :key="stats.employeeId">
                     <th scope="row">{{ stats.employeeId }}</th>
-                    <td>EMP-909636</td>
+                    <td>{{ empIDs[idx] }}</td>
                     <td>{{ stats.name }}</td>
                     <td>{{ stats.attendance[4].date }}</td>
                     <td>{{ stats.attendance[4].status }}</td>
@@ -25,14 +25,14 @@
     </div>
 </template>
 
-<style>
+<style scoped>
 .headingText {
     padding-top: 5px;
-    text-decoration: underline;
     background-color: white;
     width: 100%;
     border-radius: 3px;
-    box-shadow: 0 4px 16px 0 rgba(8, 14, 20, 0.473);
+    margin: 0;
+    /* box-shadow: 0 4px 16px 0 rgba(8, 14, 20, 0.473); */
 }
 
 .table {
@@ -52,10 +52,14 @@
     margin-left: 230px;
     margin-top: 20px;
 }
+.Hrow{
+    background-color: #2c3e50;
+    color: white;
+}
 .table th,
 td {
     text-align: center;
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
     border-bottom: 1px solid #2c3e50;
 }
 </style>
@@ -67,7 +71,19 @@ export default {
     name: 'EmployeeAttendance',
     data() {
         return {
-            attendanceAndLeave: attendanceAndLeave
+            attendanceAndLeave: attendanceAndLeave,
+            empIDs: [
+                 'EMP-909636',
+                 'EMP-909665',
+                 'EMP-909678',
+                 'EMP-909623',
+                 'EMP-909987',
+                 'EMP-909665',
+                 'EMP-909995',
+                 'EMP-909623',
+                 'EMP-900086',
+                 'EMP-909838'
+            ]
         }
     },
     methods: {
