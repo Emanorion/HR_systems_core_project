@@ -32,7 +32,7 @@
             <p class="text">Taxes & Deductions</p> <br>
             <table class="payroll-table">
                 <tr>
-                    <td class="costs"><b>#amount</b></td>
+                    <td class="costs"><b>R#</b></td>
                     <td class="space" width="50px"></td>
                     <td class="costs"><b>R{{ TotalDeduction.toFixed(2)}}</b></td>
                 </tr>
@@ -68,8 +68,10 @@
                     <td>R{{ info.salary.toFixed(2) }}</td>
                     <td>R{{ deduction(info).toFixed(2) }}</td>
                     <td>R{{ info.finalSalary.toFixed(2) }}</td>
-                    <td class="view">
-                        <router-link :to="`/payslip/${info.employeeId}`">View</router-link>
+                    <td>
+                        <div class="view">
+                            <router-link :to="`/payslip/${info.employeeId}`">View</router-link>
+                        </div>
                     </td>  
                 </tr>
             </tbody>
@@ -193,14 +195,17 @@ h1 {
     text-align: left;
 }
 
+/* VIEW BUTTON */
 .view {
-    color: rgb(7, 128, 250);
+    text-align: center;
+    background-color: rgb(230, 229, 229);
+    border-radius: 40px;
+    text-decoration: none;
 }
 
 .view:hover {
-    text-decoration: underline;
-    color: rgb(5, 105, 204);
     cursor: pointer;
+    font-weight: 400;
 }
 
 /* RESPONSIVENESS */
