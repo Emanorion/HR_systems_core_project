@@ -1,5 +1,9 @@
 <template>
-    <div class="return-btn"></div>
+    <div class="return-btn">
+        <router-link to="/payroll">
+            <i class="fa fa-arrow-left fa-lg" aria-hidden="true"></i>
+        </router-link>
+    </div>
     <!-- HEADING -->
     <div class="page">
         <div class="heading-top">
@@ -18,10 +22,11 @@
             </div>
             <br>
 
-            <!-- EARNINGS TABLE -->
+            <!-- TABLE -->
             <div class="tables">
                 <div class="table-wrap">
-                    <table class="earnings-table">
+                    <table class="earnings-deductions-table">
+                        <!-- EARNINGS TABLE -->
                         <thead>
                             <tr>
                                 <th>Earnings</th>
@@ -31,44 +36,55 @@
                         <tbody>
                             <tr>
                                 <td>Basic</td>
-                                <td>R-amount</td>
+                                <td>R{{ employee.salary.toFixed(2) }}</td>
                             </tr>
                             <tr>
                                 <td>Bonus</td>
                                 <td>N/A</td>
                             </tr>
-                            <tr>
-                                <td>Total Earnings</td>
-                                <td>R-amount</td>
+                            <tr style="height: 30px;">
+                                <td></td>
+                                <td></td>
                             </tr>
                         </tbody>
-                    </table>
-                </div>
-                <br> <br>
 
-                <!-- DEDUCTIONS TABLE -->
-                <div class="table-wrap">
-                    <table class="deductions-table">
+                        <!-- DEDUCTIONS TABLE -->
                         <thead>
                             <tr>
                                 <th>Deductions</th>
-                                <th>Amount</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>Deductions</td>
-                                <td>R-amount</td>
+                                <td>R{{ deduction.toFixed(2) }}</td>
                             </tr>
                             <tr>
                                 <td>Taxes</td>
-                                <td>R-amount</td>
+                                <td>Rx</td>
                             </tr>
-                            <tr>
-                                <td>Total Deductions</td>
-                                <td>R-amount</td>
+                            <tr style="height: 30px;">
+                                <td></td>
+                                <td></td>
                             </tr>
                         </tbody>
+
+                        <!-- TOTALS -->
+                        <thead class="totals-head">
+                            <tr>
+                                <th>Total Deductions</th>
+                                <th>R{{ deduction.toFixed(2) }}</th>
+                            </tr>
+                            <tr style="height: 10px;">
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th>Salary</th>
+                                <th>R{{ employee.finalSalary.toFixed(2) }}</th>
+                            </tr>
+                        </thead>
                     </table>
                 </div>
             </div>
@@ -97,6 +113,13 @@ export default {
         // runs automatically on component creation
         const employeeId = parseInt(this.$route.params.id)
         this.employee = this.payrollData.find(emp => emp.employeeId === employeeId)
+    },
+    computed: {
+        deduction() {
+            if (this.employee) {
+                return this.employee.salary - this.employee.finalSalary
+            }
+        }
     }
 }
 </script>
@@ -109,6 +132,28 @@ body {
 .page {
     max-width: 100%;
     padding: 20px;
+}
+
+/* BACK BUTTON */
+.return-btn {
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    align-content: center;
+    border: 2px solid #1b7ad8;
+    position: fixed;
+    top: 30px;
+    left: 30px;
+}
+
+.return-btn:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.908);
+    height: 57px;
+    width: 57px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .heading-top {
@@ -134,25 +179,25 @@ body {
     width: 100%;
     overflow-x: auto;
 }
-
-.earnings-table,
-.deductions-table {
+.earnings-deductions-table {
     margin: 0 auto;
     font-size: 20px;
     width: 100%;
 
 }
 
-.earnings-table td,
-.deductions-table td {
+.earnings-deductions-table td {
     border-bottom: none;
     font-weight: 200;
     text-align: left;
 }
 
-.earnings-table th,
-.deductions-table th {
+.earnings-deductions-table th {
     border-bottom: 1px solid black;
+}
+
+.totals-head th {
+    border-bottom: none;
 }
 
 .signatures {

@@ -1,7 +1,7 @@
 <template>
     <header class="greeting">
         <h1>Welcome user</h1>
-        <router-link to="/overview">
+        <router-link to="/login">
             <button class="gstart">Get Started</button>
         </router-link>
     </header>
