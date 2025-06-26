@@ -1,159 +1,46 @@
 <template>
   <div
     style="
-      background-image: url(https://th.bing.com/th/id/OIP.miKPWeb8ZN8vJOkTXPmOfQHaEK?w=293&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3);background-repeat: no-repeat;background-size: cover;
+      background-image: url(https://www.bing.com/th/id/OIP.K5DixXpCgmQxicIh5A0g4gHaE6?w=273&h=211&c=8&rs=1&qlt=90&o=6&cb=ircwebpc1&dpr=1.3&pid=3.1&rm=2);background-repeat: no-repeat ;background-size: cover;min-height: 100vh;
     "
   >
     <!-- buttons linking to the employee names and data -->
 
     <div class="sidenav">
-      <button class="btn btn-primary" style="height: 60px" @click="setIndex(1)">
-        Lungile Moyo
-      </button>
-      <button class="btn btn-primary" style="height: 60px" @click="setIndex(0)">
-        Sibongile Nkosi
-      </button>
-      <button class="btn btn-primary" style="height: 60px" @click="setIndex(2)">
-        Thabo Molefe
-      </button>
-      <button class="btn btn-primary" style="height: 60px" @click="setIndex(3)">
-        Keshav Naidoo
-      </button>
-      <button class="btn btn-primary" style="height: 60px" @click="setIndex(4)">
-        Zanele Khumalo
-      </button>
-      <button class="btn btn-primary" style="height: 60px" @click="setIndex(5)">
-        Sipho Zulu
-      </button>
-      <button class="btn btn-primary" style="height: 60px" @click="setIndex(6)">
-        Naledi Moeketsi
-      </button>
-      <button class="btn btn-primary" style="height: 60px" @click="setIndex(7)">
-        Farai Gumbo
-      </button>
-      <button class="btn btn-primary" style="height: 60px" @click="setIndex(8)">
-        Karabo Dlamini
-      </button>
-      <button class="btn btn-primary" style="height: 60px" @click="setIndex(9)">
-        Fatima Patel
-      </button>
+
+      <div class="buttItems" v-for="(attendance, idx) in employee_info" :key="attendance.employeeId">
+        <button class="btn btn-primary" style="height: 60px" @click="setIndex(idx)">
+        {{ attendance.name }}
+        </button>
+      </div>
     </div>
 
     <!-- card design -->
-
+<div class="center-wrapper">    
     <div class="card shadow-lg" style="height: auto; width: auto">
       <img
         src="https://th.bing.com/th/id/OIP.d0-XU41p65lgmmxUl2e5JwHaEV?rs=1&pid=ImgDetMain"
         alt=""
         style="width: 95%"
       />
-      <h3>{{ employeeInformation[selectedIndex].name }}</h3>
-      <p class="title">{{ employeeInformation[selectedIndex].position }}</p>
+      <h3>{{ employee_info[selectedIndex].name }}</h3>
+      <p class="title">{{employee_info[selectedIndex].position }}</p>
       <h4>Department</h4>
       <button class="btn btn-dark text-nowrap" style="height: auto; width: auto;">View more</button>
       <br /><br />
     </div>
+ </div>   
   </div>
+
+  
 </template>
 <script>
-import NavBar from "@/components/NavBar.vue";
-
+import employee_info from "@/data/employee_info";
 export default {
   data() {
     return {
+      employee_info:employee_info,
       selectedIndex: 0,
-      employeeInformation: [
-        {
-          employeeId: 1,
-          name: "Sibongile Nkosi",
-          position: "Software Engineer",
-          department: "Development",
-          salary: 70000,
-          employmentHistory: "Joined in 2015, promoted to Senior in 2018",
-          contact: "sibongile.nkosi@moderntech.com",
-        },
-        {
-          employeeId: 2,
-          name: "Lungile Moyo",
-          position: "HR Manager",
-          department: "HR",
-          salary: 80000,
-          employmentHistory: "Joined in 2013, promoted to Manager in 2017",
-          contact: "lungile.moyo@moderntech.com",
-        },
-        {
-          employeeId: 3,
-          name: "Thabo Molefe",
-          position: "Quality Analyst",
-          department: "QA",
-          salary: 55000,
-          employmentHistory: "Joined in 2018",
-          contact: "thabo.molefe@moderntech.com",
-        },
-        {
-          employeeId: 4,
-          name: "Keshav Naidoo",
-          position: "Sales Representative",
-          department: "Sales",
-          salary: 60000,
-          employmentHistory: "Joined in 2020",
-          contact: "keshav.naidoo@moderntech.com",
-        },
-        {
-          employeeId: 5,
-          name: "Zanele Khumalo",
-          position: "Marketing Specialist",
-          department: "Marketing",
-          salary: 58000,
-          employmentHistory: "Joined in 2019",
-          contact: "zanele.khumalo@moderntech.com",
-        },
-        {
-          employeeId: 6,
-          name: "Sipho Zulu",
-          position: "UI/UX Designer",
-          department: "Design",
-          salary: 65000,
-          employmentHistory: "Joined in 2016",
-          contact: "sipho.zulu@moderntech.com",
-        },
-        {
-          employeeId: 7,
-          name: "Naledi Moeketsi",
-          position: "DevOps Engineer",
-          department: "IT",
-          salary: 72000,
-          employmentHistory: "Joined in 2017",
-          contact: "naledi.moeketsi@moderntech.com",
-        },
-        {
-          employeeId: 8,
-          name: "Farai Gumbo",
-          position: "Content Strategist",
-          department: "Marketing",
-          salary: 56000,
-          employmentHistory: "Joined in 2021",
-          contact: "farai.gumbo@moderntech.com",
-        },
-        {
-          employeeId: 9,
-          name: "Karabo Dlamini",
-          position: "Accountant",
-          department: "Finance",
-          salary: 62000,
-          employmentHistory: "Joined in 2018",
-          contact: "karabo.dlamini@moderntech.com",
-        },
-        {
-          employeeId: 10,
-          name: "Fatima Patel",
-          position: "Customer Support Lead",
-          department: "Support",
-          salary: 58000,
-          employmentHistory: "Joined in 2016",
-          contact: "fatima.patel@moderntech.com",
-        },
-      ],
     };
   },
   methods: {
@@ -210,5 +97,12 @@ body {
   max-width: 300px;
   margin: auto;
   text-align: center;
+}
+.center-wrapper{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 </style>
