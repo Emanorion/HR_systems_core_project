@@ -1,17 +1,21 @@
 <template>
     <div class="overView-Layout">
-        <HrNav />
         <div class="stats">
-        <LeaveStats />
-        <AttendanceStats />
-        <EmployeeReview />
+            <div class="sub-layout">
+                <div class="dash-title">
+                    <WelcomeComp />
+                </div>
+                <div class="cont">
+                    <LeaveStats />
+                    <AttendanceStats />
+                </div>
+            </div>
+                <EmployeeReview />
         </div>
         <EmployeeAttendance />
         <div class="dashboardLayout">
             <Dashboard />
         </div>
-
-
     </div>
 </template>
 <script>
@@ -20,6 +24,7 @@ import EmployeeAttendance from '@/components/EmployeeAttendance.vue';
 import LeaveStats from '@/components/LeaveStats.vue';
 import AttendanceStats from '@/components/AttendanceStats.vue';
 import EmployeeReview from '@/components/EmployeeReview.vue';
+import WelcomeComp from '@/components/WelcomeComp.vue';
 
 export default {
     components: {
@@ -27,20 +32,36 @@ export default {
         EmployeeAttendance,
         LeaveStats,
         AttendanceStats,
-        EmployeeReview
+        EmployeeReview,
+        WelcomeComp
     }
 }
 
 </script>
 <style>
+.dash-title{
+    margin-top: 30px;
+    margin-bottom: 13px;
+}
 .overView-Layout {
-    margin-top:30px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
 }
-.stats{
+
+.stats {
     display: flex;
-    width: 1250px;
-    margin-left: 230px;
+    width: 83%;
+    margin-left: 15%;
+    height: 81.5vh;
+}
+.sub-layout{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+.cont{
+    display: flex;
+    width: 100%;
 }
 </style>
