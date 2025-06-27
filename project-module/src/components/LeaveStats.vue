@@ -15,7 +15,7 @@
             </div>
             <div class="leaveRow">
                 <h5>{{ attendance.name }}</h5>
-                <p>Reason: {{ attendance.leaveRequests[1] ? attendance.leaveRequests[1].reason : 'N/A'  }}</p>
+                <p class="rsn-txt">Reason: {{ attendance.leaveRequests[1] ? attendance.leaveRequests[1].reason : 'N/A'  }}</p>
             </div>
             <div class="leaveResponse">
                 <p class="statusDecoration">{{ attendance.leaveRequests[1] ? attendance.leaveRequests[1].status : 'N/A' }}</p>
@@ -39,7 +39,7 @@ export default {
 h3 {
     margin: 5px;
     font-size: 30px;
-    color: rgba(126, 123, 123, 0.671);
+    color: rgba(126, 123, 123, 0.904);
 }
 .date{
     margin-bottom: 10px;
@@ -52,7 +52,11 @@ h5 {
 p {
     margin: 1px;
     font-weight: 250;
-
+}
+.rsn-txt{
+    color: #2c3e50;
+    font-weight: 400;
+    font-size: 17px;
 }
 
 img {
@@ -95,6 +99,7 @@ button {
     text-align: start;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 5px;
 }
 
 .leaveRow {

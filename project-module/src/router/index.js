@@ -7,6 +7,7 @@ import Payroll from '@/views/Payroll.vue'
 import PayslipComp from '@/components/PayslipComp.vue'
 import LoginView from '@/views/LoginView.vue'
 import OverallAttendance from '@/views/OverallAttendance.vue'
+import Reviews from '@/views/Reviews.vue'
 
 const routes = [
   {
@@ -51,6 +52,11 @@ const routes = [
     path: '/overallattendance',
     name: 'overallattendance',
     component: OverallAttendance
+  },
+  {
+    path: '/reviews',
+    name: 'reviews',
+    component: Reviews
   }
 ]
 

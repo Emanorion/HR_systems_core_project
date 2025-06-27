@@ -1,9 +1,9 @@
 <template>
-    <div class="btn-return">
+    <!-- <div class="btn-return">
         <router-link to="/overview">
             <i class="i-arrow fa fa-arrow-left fa-lg" aria-hidden="true"></i>
         </router-link>
-    </div>
+    </div> -->
     <h1 class="pageTitle">THis is the overeall attendance</h1>
     <EmployeeOverallAttendance />
     <SideBar />
