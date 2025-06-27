@@ -1,8 +1,8 @@
 <template>
+  <SideBar />
   <!-- Main background container with background image and minimum height -->
   <div
     style="
-      background-image: url(https://www.bing.com/th/id/OIP.K5DixXpCgmQxicIh5A0g4gHaE6?w=273&h=211&c=8&rs=1&qlt=90&o=6&cb=ircwebpc1&dpr=1.3&pid=3.1&rm=2);
       background-repeat: no-repeat;
       background-size: cover;
       min-height: 100vh;
@@ -27,7 +27,7 @@
     >
       <!-- Modal header with employee name and close button -->
       <div class="modal-header border-bottom-0">
-        <h1 class="  text-black">{{ employee_info[selectedIndex].name }}</h1>
+        <h1 class="text-black">{{ employee_info[selectedIndex].name }}</h1>
         <button
           type="button"
           class="btn-close"
@@ -38,13 +38,9 @@
       <!-- Modal body with department info -->
       <div class="modal-body py-0">
         <h3>{{ employee_info[selectedIndex].employmentHistory }}</h3>
-        <h2>
-         Department : {{ employee_info[selectedIndex].department }}
-        </h2> 
+        <h2>Department : {{ employee_info[selectedIndex].department }}</h2>
         <h4>Current salary: R {{ employee_info[selectedIndex].salary }}</h4>
         <h5>{{ employee_info[selectedIndex].contact }}</h5>
-
-
       </div>
       <!-- Modal footer with close button -->
       <div
@@ -60,31 +56,14 @@
       </div>
     </div>
 
-    <!-- Side navigation: List of employee names as buttons -->
-    <div class="sidenav">
-      <div
-        class="buttItems"
-        v-for="(attendance, idx) in employee_info"
-        :key="attendance.employeeId"
-      >
-
-
-        <!-- When clicked, sets the selected employee index -->
-        <button
-          class="btn text-white"
-          style="height: 60px"
-          @click="setIndex(idx)"
-        >
-          {{ attendance.name }}
-        </button>
-      </div>
-    </div>
-
     <!-- Main card displaying selected employee's info -->
-    <div class="center-wrapper">
-      <div class="card shadow-lg" style="height: auto; width: auto">
-
-
+    <div class="center-wrapper " style="margin-left: 190px;    flex-wrap: wrap; gap: 24px">
+      <div
+        class="card shadow-lg "
+        v-for="employee in employee_info"
+        :key="employee.employeeId"
+        style="height: auto; width: 300px; margin: 12px"
+      >
         <!-- Employee image -->
         <img
           src="https://th.bing.com/th/id/OIP.d0-XU41p65lgmmxUl2e5JwHaEV?rs=1&pid=ImgDetMain"
@@ -92,26 +71,22 @@
           style="width: 95%"
         />
 
-
-
         <!-- Employee name and position -->
-        <h3>{{ employee_info[selectedIndex].name }}</h3>
-        <p class="title">{{ employee_info[selectedIndex].position }}</p>
-        <h4>Department</h4>
-
-
-
-
-
-        <!-- Button to open modal with more info -->
+        <h3>{{ employee.name }}</h3>
+        <p class="title">{{ employee.position }}</p>
+        <h4>{{ employee.department }}</h4>
+      
+        <!--  Button to open modal or more details -->
         <button
-          @click="openModal()"
-          class="btn btn-dark text-nowrap"
+          @click="
+            setIndex(employee_info.indexOf(employee));
+            openModal();
+          "
+          class="btn  text-nowrap"
           style="height: auto; width: auto"
         >
           View more
         </button>
-        <br /><br />
       </div>
     </div>
   </div>
@@ -119,13 +94,14 @@
 
 <script>
 // Import employee data from a local file
+import SideBar from "@/components/SideBar.vue";
 import employee_info from "@/data/employee_info";
 export default {
   data() {
     return {
       employee_info: employee_info, // Array of employee objects
-      selectedIndex: 0,             // Index of the currently selected employee
-      showModal: false,             // Controls modal visibility
+      selectedIndex: 0, // Index of the currently selected employee
+      showModal: false, // Controls modal visibility
     };
   },
   methods: {
@@ -142,13 +118,20 @@ export default {
       this.showModal = false;
     },
   },
-  components: {},
+  components: {
+    SideBar,
+  },
 };
 </script>
 
 <style>
 * {
   box-sizing: border-box;
+}
+
+h3 {
+  font-weight: 400px;
+  color: #111;
 }
 
 body {
@@ -207,5 +190,9 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+}
+.btn{
+  background-color: #2d4257;
+  color: white;
 }
 </style>
