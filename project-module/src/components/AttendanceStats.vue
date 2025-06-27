@@ -107,10 +107,10 @@ export default {
 }
 .attendanceCard {
     margin-left: 10px;
-    width: 600px;
+    width: 100%;
     background-color: white;
     height: 350px;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 4px 16px 0 rgba(8, 14, 20, 0.312);
 }
 
@@ -172,4 +172,33 @@ export default {
     margin: auto;
     border-radius: 4px;
 }
+@media screen and (max-width: 1024px) {
+    .attendTitle{
+        font-size: 25px;
+    }
+    .subDiv{
+        width: 95%;
+        display: flex;
+        align-items: center;
+    }
+    .sub-txt{
+        font-size: 20px;
+        padding: 10px 0 0 10px;
+    }
+    .sub-img{
+        width: 60px;
+    }
+    .a-l-a{
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .subDiv{
+        width: 95%;
+    }
+    .a-l-a{
+        text-align: center;
+    }
+}
+
 </style>

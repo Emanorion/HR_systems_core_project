@@ -10,9 +10,13 @@
                     <AttendanceStats />
                 </div>
             </div>
+            <div class="rev-card-item">
                 <EmployeeReview />
+            </div>
         </div>
-        <EmployeeAttendance />
+        <div class="bottom-half">
+            <EmployeeAttendance />
+        </div>
         <div class="dashboardLayout">
             <Dashboard />
         </div>
@@ -39,29 +43,55 @@ export default {
 
 </script>
 <style>
-.dash-title{
+.dash-title {
     margin-top: 30px;
     margin-bottom: 13px;
 }
+
 .overView-Layout {
-    margin-top: 30px;
     display: flex;
     flex-direction: column;
 }
 
 .stats {
     display: flex;
-    width: 83%;
+    width: 80%;
     margin-left: 15%;
-    height: 81.5vh;
+    padding-top: 10px;
 }
-.sub-layout{
+
+.sub-layout {
     display: flex;
     flex-direction: column;
     width: 70%;
 }
-.cont{
+
+.cont {
     display: flex;
     width: 100%;
 }
+@media screen and (max-width: 1024) {
+    
+}
+@media screen and (max-width: 768px){
+    .stats{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin-left: 10%;
+        padding: 0;
+    }
+    .sub-layout{
+        width: 97%;
+    }
+    .cont{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .rev-card-item{
+        width: 97%;
+        height: 500px;
+    }
+}
+
 </style>

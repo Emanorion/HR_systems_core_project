@@ -126,4 +126,33 @@ button {
     align-items: center;
     font-weight: 400;
 }
+@media screen and (max-width: 1024px) {
+    .card2{
+        width: 300px;
+    }
+    .leaveCard{
+        width: 300px;
+        display: flex;
+    }
+    .leaveResponse{
+        margin: 0;
+    }
+    .leaveRow{
+        width: 150px;
+    }
+    h3{
+        font-size: 25px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .card2{
+        width: 50%;
+    }
+    .leaveCard{
+        width: 90%;
+        display: flex;
+        font-size: 1rem;
+    }
+}
+
 </style>

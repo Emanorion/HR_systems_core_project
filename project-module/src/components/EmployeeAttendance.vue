@@ -30,9 +30,8 @@
     padding-top: 5px;
     background-color: white;
     width: 100%;
-    border-radius: 3px;
+    border-radius: 10px;
     margin: 0;
-    /* box-shadow: 0 4px 16px 0 rgba(8, 14, 20, 0.473); */
 }
 
 .table {
@@ -59,8 +58,13 @@
 .table th,
 td {
     text-align: center;
-    /* padding-bottom: 10px; */
     border-bottom: 1px solid #2c3e50;
+}
+@media screen and (max-width: 768px) {
+    .heading{
+        margin-left: 12%;
+        width: 86%;
+    }
 }
 </style>
 

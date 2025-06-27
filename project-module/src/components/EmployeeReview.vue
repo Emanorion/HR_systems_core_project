@@ -3,15 +3,19 @@
         <h3 class="rev-title">Reviews</h3>
         <div class="reviews">
             <div class="review-items" v-for="(employee,idx) in employee_info.slice(0,5)" :key="employee.employeeId">
-                <div class="top">
+                <div class="pfp">
                     <img class="rev-img" :src="imgAndRating[idx].img" alt="hah">
+                </div>
+                <div class="top">
                     <h5 class="rev-name">{{ employee.name }}</h5>
+                    <p class="review">{{ employee.position }}</p>
                 </div>
                 <div class="bottom">
-                    <p class="review">{{ employee.position }}</p>
                     <div class="rev-icon">
-                        <i class="fa fa-star" aria-hidden="true">{{ imgAndRating[idx].rating }}</i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <p class="icon-txt">{{ imgAndRating[idx].rating }}</p>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -35,11 +39,11 @@ export default {
                 },
                 {
                 img: "https://media.istockphoto.com/id/1174056245/photo/some-moments-require-some-seriousness.jpg?s=612x612&w=0&k=20&c=dPqQQq6wiygApzSF9r72B9p6Bp4pygxm3M7aqC1oae8=",
-                rating: 5
+                rating: 7.7
                 },
                 {
                 img: "https://img.freepik.com/premium-photo/minimal-close-up-portrait-serious-black-man-looking-camera-while-standing-by-white-wall-copy-s_236854-34801.jpg",
-                rating: 7.8
+                rating: 8.6
                 },
                 {
                 img: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?cs=srgb&dl=pexels-pixabay-415829.jpg&fm=jpg",
@@ -57,7 +61,7 @@ export default {
 
 <style scoped>
 .rev-title{
-    margin: 10px;
+    padding: 20px;
     font-size: 30px;
     color: rgba(126, 123, 123, 0.904);
 }
@@ -65,22 +69,29 @@ export default {
     background-color: white;
     margin-left: 10px;
     width: 400px;
-    border-radius: 5px;
+    height: 100%;
+    border-radius: 10px;
     box-shadow: 0 4px 16px 0 rgba(8, 14, 20, 0.312);
 }
 .review-items{
-    width: 300px;
-    margin-left: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.pfp{
+    width: 15%;
+    align-content: center;
 }
 .top{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     align-self: center;
-    width: 75%;
+    width: 50%;
 }
 .bottom{
     display: flex;
-    width: 90%;
+    width: 20%;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3px;
@@ -90,19 +101,30 @@ export default {
     width: 50px;
     border-radius: 6px;
 }
-.rev-name{
-    margin-left: 10px;
-}
 .rev-icon{
     background-color: rgba(245, 171, 33, 0.226);
-    width: 50px;
+    width: 60px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 30px;
+    border-radius: 10px;
+}
+.icon-txt{
+    margin-top: 10px;
+    color: orange;
+    font-weight: 400;
 }
 .reviews{
-    padding-top: 3px;
-    padding-left: 5px;
     margin: 0;
     font-weight: 300;
+    height: 75%;
+}
+.review{
+    color: #333;
+    font-weight: 400;
 }
 .rev-btn{
     width: 100%;
@@ -119,5 +141,27 @@ export default {
 .fa{
     color: orange;
     border-radius: 5px;
+    width: 15px;
 }
+@media screen and (max-width: 1024px) {
+    .ReviewCard{
+        width: 300px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .ReviewCard{
+        width: 100%;
+        height: 100%;
+    }
+    .rev-img{
+        width: 80px;
+    }
+    .rev-title{
+        padding: 10px;
+    }
+    .rv-btn-div{
+        padding: 10px;
+    }
+}
+
 </style>
