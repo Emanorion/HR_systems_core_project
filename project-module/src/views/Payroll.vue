@@ -1,17 +1,23 @@
 <template>
-    <NavBar/>
-    <PayrollComp/>
+    <div class="payroll-layout">
+        <PayrollComp/>
+        <SideBar/>
+    </div>
 </template>
 
 <script>
 
-    import NavBar from '@/components/NavBar.vue';
     import PayrollComp from '@/components/PayrollComp.vue';
+    import SideBar from '@/components/SideBar.vue';
 
     export default {
         components: {
             PayrollComp,
-            NavBar
+            SideBar
         }
     }
 </script>
+
+<style scoped>
+    
+</style>

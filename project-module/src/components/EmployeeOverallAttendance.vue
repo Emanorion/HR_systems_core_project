@@ -74,9 +74,9 @@ export default {
     font-weight: 300;
     background-color: white;
     border-radius: 5px;
-    width: 1250px;
+    width: 80%;
     height: 90vh;
-    margin-left: 230px;
+    margin-left: 15%;
     margin-top: 20px;
 }
 .Hrow{
@@ -84,7 +84,7 @@ export default {
     color: white;
 }
 .content {
-    width: 1250px;
+    width: 100%;
     margin: auto;
     padding: 10;
     box-shadow: 1px 4px 3px 2px rgba(8, 14, 20, 0.312);

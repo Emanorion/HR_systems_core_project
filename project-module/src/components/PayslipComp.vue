@@ -1,14 +1,14 @@
 <template>
     <div class="return-btn">
         <router-link to="/payroll">
-            <i class="fa fa-arrow-left fa-lg" aria-hidden="true"></i>
+            <i class="i-arrow fa fa-arrow-left fa-lg" aria-hidden="true"></i>
         </router-link>
     </div>
     <!-- HEADING -->
     <div class="page">
         <div class="heading-top">
             <h1>ModernTech Solutions</h1> <br>
-            <h3>PAYSLIP</h3>
+            <h3 class="payslip">PAYSLIP</h3>
             <p style="font-weight: 400; font-size: 20px;">Pay Date: 31 July 2025</p> <br> <br>
         </div>
 
@@ -132,6 +132,10 @@ body {
 .page {
     max-width: 100%;
     padding: 20px;
+}
+
+.payslip {
+    color: #2d4257;
 }
 
 /* BACK BUTTON */

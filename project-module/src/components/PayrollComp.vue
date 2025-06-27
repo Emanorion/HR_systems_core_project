@@ -1,10 +1,10 @@
  
  <template>
-    <h1 style="margin: 30px;">Payroll</h1>
+    <h1 style="margin-left: 15%;">Payroll</h1>
     <hr> <br>
 
     <!-- INFORMATION DIVS -->
-    <div class="container">
+    <div class="cont-box">
         <div class="box">
             <p class="text">Period: July 2025 | 31 Payable Days</p> <br>
             <table class="payroll-table">
@@ -20,7 +20,7 @@
                 </tr>
             </table>
         </div>
-        <div class="box">
+        <div class="box small">
             <div class="pay-day">
                 <p class="p">PAY DAY</p>
                 <p class="date">31 <br> July 2025</p>
@@ -155,11 +155,13 @@ h1 {
 }
 
 /* CSS INFORMATION DIVS */
-.container {
+.cont-box {
+    width: 80%;
+    margin-left: 15%;
+    margin-bottom: 30px;
     display: flex;
+    justify-content: space-evenly;
     gap:30px;
-    margin: 0 auto;
-    margin-bottom: 50px;
     color: rgb(224, 222, 222);
 }
 
@@ -171,9 +173,16 @@ h1 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.box.small {
+    flex: 0.5;
+    text-align: center;
+    padding: 20px 15px;
+}
+
 .pay-day {
     text-align: center;
     font-weight: 200;
+    font-size: 30px;
 }
 
 .text {
@@ -211,7 +220,8 @@ h1 {
 
 /* CSS EMPLOYEE TABLE */
 .table-wrapper {
-    width: 100%;
+    width: 85%;
+    margin-left: 15%;
     max-width: 100vw;
     overflow-x: auto;
 }
@@ -252,7 +262,7 @@ h1 {
 
 .view:hover {
     cursor: pointer;
-    font-weight: 400;
+    background-color: #3e566e;
 }
 
 /* RESPONSIVENESS */
