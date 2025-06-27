@@ -1,16 +1,16 @@
 <template>
-    <NavBar />
-    <h3>The reviews page</h3>
-    
+    <ReviewComp />
+    <SideBar />
 </template>
-
 <script>
-import NavBar from '@/components/NavBar.vue';
+import ReviewComp from '@/components/ReviewComp.vue';
+import SideBar from '@/components/SideBar.vue';
 
-    export default{
-        components: {
-            NavBar
-        }
+export default {
+    components: {
+        ReviewComp,
+        SideBar
     }
+}
 
 </script>

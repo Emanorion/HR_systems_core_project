@@ -24,6 +24,7 @@
         width: 200px;
         border-radius: 10px;
         margin: 20px;
+        box-shadow: 0 4px 16px 0 rgba(8, 14, 20, 0.312);
     }
     .dash-img{
         display: flex;
@@ -33,5 +34,13 @@
         color: #333;
         font-weight: 400;
         font-size: 20px;
+    }
+    @media screen and (max-width: 768px){
+        .wlcm-title{
+            font-size: 35px;
+        }
+        .txt{
+            text-align: center;
+        }
     }
 </style>
