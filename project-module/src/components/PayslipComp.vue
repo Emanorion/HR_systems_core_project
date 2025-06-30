@@ -1,9 +1,11 @@
 <template>
-    <div class="return-btn">
-        <router-link to="/payroll">
-            <i class="i-arrow fa fa-arrow-left fa-lg" aria-hidden="true"></i>
-        </router-link>
-    </div>
+    <router-link to="/payroll">
+        <div class="return-btn">
+            <router-link to="/payroll">
+                <i class="i-arrow fa fa-arrow-left fa-lg" aria-hidden="true"></i>
+            </router-link>
+        </div>
+    </router-link>
     <!-- HEADING -->
     <div class="page">
         <div class="heading-top">
@@ -62,7 +64,7 @@
                             </tr>
                             <tr>
                                 <td>Taxes</td>
-                                <td>Rx</td>
+                                <td>R#</td>
                             </tr>
                             <tr style="height: 30px;">
                                 <td></td>
@@ -176,6 +178,8 @@ body {
 .emp-info {
     text-align: left;
     font-size: 25px;
+    color: #2d4257;
+    margin-left: 6%;
     font-weight: 400;
 }
 
@@ -187,7 +191,7 @@ body {
 .earnings-deductions-table {
     margin: 0 auto;
     font-size: 20px;
-    width: 100%;
+    width: 94%;
 
 }
 
@@ -195,9 +199,12 @@ body {
     border-bottom: none;
     font-weight: 200;
     text-align: left;
+    color: #2d4257;
 }
 
 .earnings-deductions-table th {
+    background-color: #2d4257;
+    color: white;
     border-bottom: 1px solid black;
 }
 
@@ -208,6 +215,7 @@ body {
 .signatures {
     display: flex;
     justify-content: space-evenly;
+    color: #2d4257;
     gap: 100px;
     flex-wrap: wrap;
 }

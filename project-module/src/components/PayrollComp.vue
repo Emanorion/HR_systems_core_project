@@ -4,8 +4,8 @@
     <hr> <br>
 
     <!-- INFORMATION DIVS -->
-    <div class="cont-box">
-        <div class="box">
+    <div class="cont-box animate__animated animate__fadeIn animate__slow">
+        <div class="box one">
             <p class="text">Period: July 2025 | 31 Payable Days</p> <br>
             <table class="payroll-table">
                 <tr class="costs">
@@ -28,7 +28,7 @@
                 <p class="p">250  employees</p>
             </div>
         </div>
-        <div class="box">
+        <div class="box two">
             <p class="text">Taxes & Deductions</p> <br>
             <table class="payroll-table">
                 <tr>
@@ -68,7 +68,7 @@
                     <td>R{{ animatedDeductions[info.employeeId]?.toFixed(2) }}</td>
                     <td>R{{ animatedFinalSalaries[info.employeeId]?.toFixed(2) }}</td>
                     <td>
-                        <div class="view">
+                        <div class="view-wrap">
                             <router-link :to="`/payslip/${info.employeeId}`" class="view">View</router-link>
                         </div>
                     </td>  
@@ -160,6 +160,7 @@ h1 {
     margin-left: 15%;
     margin-bottom: 30px;
     display: flex;
+    align-content: center;
     justify-content: space-evenly;
     gap:30px;
     color: rgb(224, 222, 222);
@@ -167,14 +168,14 @@ h1 {
 
 .box {  
     background-color: #2d4257;
-    flex: 1;
+    width: 30%;
     padding: 8px 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .box.small {
-    flex: 0.5;
+    width: 15%;
     text-align: center;
     padding: 20px 15px;
 }
@@ -254,21 +255,53 @@ h1 {
 /* VIEW BUTTON */
 .view {
     text-align: center;
+    color: rgb(224, 222, 222);
+    text-decoration: none;
+}
+
+.view-wrap {
+    text-align: center;
+    margin-left: 20%;
     background-color: #2d4257;
+    width: 70px;
     color: rgb(224, 222, 222);
     border-radius: 40px;
     text-decoration: none;
 }
 
-.view:hover {
+.view-wrap:hover {
     cursor: pointer;
     background-color: #3e566e;
 }
 
 /* RESPONSIVENESS */
-@media (max-width: 900px) {
-    .container {
+@media (max-width: 1420px) {
+    .cont-box {
+        flex-wrap: wrap;
+    }
+    .box.small {
+        order: -1;
+        width: 89%;
+    }
+    .box.one,
+    .box.two {
+        order: 2;
+        width: 40%;
+    }
+}
+
+@media (max-width: 950px) {
+    .cont-box {
         flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .box,
+    .box.small,
+    .box.one,
+    .box.two {
+        width: 95%;
+        margin: 0 15px;
     }
 }
 </style>
