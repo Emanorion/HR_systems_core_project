@@ -20,7 +20,9 @@
                     </div>
 
                     <!-- SUBMIT BUTTON -->
-                    <button type="submit" class="signIn-button">Sign In</button>
+                    <div class="cont-button">
+                        <button type="submit" class="signIn-button">Sign In</button>
+                    </div>
                 </div>
                 <br>
                 <p class="error-msg" :class="{visible: signInError}">Invalid username or password</p>
@@ -67,6 +69,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        background-image: url('@/assets/background.jpg');
+        background-position: top right;
+        background-repeat: no-repeat;
+        animation: moving 50s infinite;
     }
 
     .signIn {
@@ -109,18 +115,26 @@
     }
 
     /* CSS BUTTON */
+    .cont-button {
+        display: flex;
+        justify-content: center;
+    }
     .signIn-button {
-        border-radius: 10px;
+        border-radius: 15px;
         padding: 10px 15px;
-        color: rgb(78, 177, 216);
+        background-color: #2d4257;
+        color: white;
         font-size: 20px;
         border: 1px solid #2d4257;
     }
 
     .signIn-button:hover {
-        border-radius: 10px;
-        font-weight: 400;
+        border-radius: 15px;    
+        background-color: white;
+        color: #2d4257;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 6px 20px 0 rgba(0, 0, 0, 0.08);
+        transform: translateY(-2px);
+        transition: transform ease-in 2s;
     }
 
     /* CSS ERROR */
@@ -145,6 +159,11 @@
 
     .errorInput {
         border: 2px solid red;
+    }
+
+    /* KEYFRAME */
+    @keyframes moving {
+        50% {background-position: center}
     }
 
     @media (max-width: 800px) {
