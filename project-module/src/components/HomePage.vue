@@ -69,4 +69,13 @@ export default {
         font-size: 50px;
     }
 }
+
+@media (max-width: 400px) {
+    .greet-head {
+        font-size: 55px;
+    }
+    .greet-welcome {
+        font-size: 35px;
+    }
+}
 </style>

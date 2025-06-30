@@ -296,6 +296,10 @@ h1 {
         flex-wrap: nowrap;
     }
 
+    .payroll-table .costs {
+        font-size: 22px;
+    }
+
     .box,
     .box.small,
     .box.one,
