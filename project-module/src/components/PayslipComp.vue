@@ -78,16 +78,15 @@
                                 <th>Total Deductions</th>
                                 <th>R{{ deduction.toFixed(2) }}</th>
                             </tr>
-                            <tr style="height: 10px;">
-                                <th></th>
-                                <th></th>
-                            </tr>
                             <tr>
                                 <th>Salary</th>
                                 <th>R{{ employee.finalSalary.toFixed(2) }}</th>
                             </tr>
                         </thead>
                     </table>
+                </div>
+                <div>
+                    <p class="estimated"><i>Estimated annual salary: R{{ estimatedAnnual.toFixed(2) }}</i></p>
                 </div>
             </div>
         </div> <br> <br> <br>
@@ -120,6 +119,11 @@ export default {
         deduction() {
             if (this.employee) {
                 return this.employee.salary - this.employee.finalSalary
+            }
+        },
+        estimatedAnnual() {
+            if (this.employee) {
+                return this.employee.finalSalary * 12
             }
         }
     }
@@ -197,7 +201,7 @@ body {
 
 .earnings-deductions-table td {
     border-bottom: none;
-    font-weight: 200;
+    font-weight: 300;
     text-align: left;
     color: #2d4257;
 }
@@ -212,6 +216,15 @@ body {
     border-bottom: none;
 }
 
+.estimated {
+    text-align: right;
+    font-weight: 400;
+    font-size: 20px;
+    color: #2d4257;
+    margin-right: 4%;
+}
+
+/* Signatures */
 .signatures {
     display: flex;
     justify-content: space-evenly;
