@@ -25,7 +25,11 @@
                     <td>{{ empIDs[idx] }}</td>
                     <td>{{ stats.name }}</td>
                     <td>{{ stats.attendance[4].date }}</td>
-                    <td>{{ checkIfDatePresent(stats) }}</td>
+                    <td class="last-one">
+                        <div class="td-back" :style="changeBackground(stats)">
+                            {{ checkIfDatePresent(stats) }}
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -43,28 +47,41 @@ export default {
             attendanceAndLeave: attendanceAndLeave,
             selectDate: '',
             empIDs: [
-                 'EMP-909636',
-                 'EMP-909665',
-                 'EMP-909678',
-                 'EMP-909623',
-                 'EMP-909987',
-                 'EMP-909665',
-                 'EMP-909995',
-                 'EMP-909623',
-                 'EMP-900086',
-                 'EMP-909838'
+                'EMP-909636',
+                'EMP-909665',
+                'EMP-909678',
+                'EMP-909623',
+                'EMP-909987',
+                'EMP-909665',
+                'EMP-909995',
+                'EMP-909623',
+                'EMP-900086',
+                'EMP-909838'
             ]
         }
     },
     methods: {
 
-        checkIfDatePresent(stats){
+        checkIfDatePresent(stats) {
             const record = stats.attendance.find(att => att.date === this.selectDate);
             return record ? record.status : 'N/A'
+        },
+        changeBackground(stats) {
+            const record = stats.attendance.find(att => att.date === this.selectDate);
+            if (record) {
+                if (record.status === 'Present') {
+                    return { backgroundColor: 'green', color: 'white' };
+                } else if (record.status === 'Absent') {
+                    return { backgroundColor: 'red', color: 'white' };
+                }
+            } else {
+                // No record found, so status is N/A
+                return { backgroundColor: 'grey', color: 'white' };
+            }
+            return {};
         }
-    }
+     }
 }
-
 </script>
 
 <style>
@@ -79,10 +96,12 @@ export default {
     margin-left: 15%;
     margin-top: 20px;
 }
-.Hrow{
+
+.Hrow {
     background-color: #2c3e50;
     color: white;
 }
+
 .content {
     width: 100%;
     margin: auto;
@@ -90,11 +109,13 @@ export default {
     box-shadow: 1px 4px 3px 2px rgba(8, 14, 20, 0.312);
     height: 100%;
 }
-.date{
+
+.date {
     text-align: center;
     margin-top: 7px;
     font-size: 16px;
 }
+
 .content th,
 td {
     text-align: center;
@@ -102,10 +123,15 @@ td {
     border-bottom: 1px solid #2c3e50;
     height: 45px;
 }
+
 .btn-group .btn-danger {
     background-color: #007bff !important;
     border-color: #007bff !important;
     color: #fff !important;
     margin-top: 4px;
+}
+
+.td-back {
+    border-radius: 5px;
 }
 </style>

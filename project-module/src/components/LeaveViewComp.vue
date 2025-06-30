@@ -15,7 +15,9 @@
                     <td v-if="employee.leaveRequests && employee.leaveRequests.length">{{ employee.leaveRequests[0].reason }}</td>
                     <td v-if="employee.leaveRequests && employee.leaveRequests.length">{{ employee.leaveRequests[0].date }}</td>
                     <td v-if="employee.leaveRequests && employee.leaveRequests.length">{{ employee.leaveRequests[0].reason }}</td>
-                    <td v-if="employee.leaveRequests && employee.leaveRequests.length">{{ employee.leaveRequests[0].status }}</td>
+                    <td v-if="employee.leaveRequests && employee.leaveRequests.length"><div class="td-background" :style="changeBackground(employee)">
+                        {{ employee.leaveRequests[0].status }}
+                    </div></td>
 
                     <!--  handle case where there are no leave requests -->
                     <td v-else colspan="4">No leave requests</td>
@@ -33,6 +35,20 @@ export default {
         return{
             attendanceAndLeave
         }
+    },
+    methods: {
+        changeBackground(employee){
+    if (employee.leaveRequests[0].status) {
+        if (employee.leaveRequests[0].status === 'Approved') {
+            return { backgroundColor: 'green', color: 'white'};
+        } else if (employee.leaveRequests[0].status === 'Denied') {
+            return { backgroundColor: 'red', color: 'white' };
+        } else if (employee.leaveRequests[0].status === 'Pending') {
+            return { backgroundColor: 'orange', color: 'white' };
+        }
+    }
+    return {};
+    }
     }
 }
 </script>
@@ -77,5 +93,8 @@ td {
     padding-bottom: 10px;
     border-bottom: 1px solid #2c3e50;
     font-weight: 400;
+}
+.td-background{
+    border-radius: 5px;
 }
 </style>

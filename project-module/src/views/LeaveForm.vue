@@ -1,7 +1,7 @@
 <template>
   <SideBar />
 
-<div style="margin-left: 200px; padding: 24px; ">
+<div class="leave-div" style="margin-left: 200px; padding: 24px; ">
   <h1>Leave Balance</h1>  
   <div class="d-flex justify-content-between flex-wrap gap-3">
     <div class="card d-flex" style="width: 18rem">
@@ -26,7 +26,7 @@
   </div>
 
   <div style="margin-top: 20px;">
-    <h1>Leave Request History</h1>
+    <h1>Leave Requests</h1>
     <LeaveViewComp />
   </div>
 
@@ -55,8 +55,16 @@ export default {
 <style>
 .card{
   font-weight: 500;
-  background-color: #2c3e50;
 }
-
+@media screen and (max-width: 1024px) {
+  .leave-div{
+    margin-left: 147px !important;
+  }
+}
+@media screen and (max-width: 780px) {
+  .leave-div{
+    margin-left: 70px !important;
+  }
+}
 
 </style>

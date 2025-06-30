@@ -18,7 +18,11 @@
                     <td>{{ empIDs[idx] }}</td>
                     <td>{{ stats.name }}</td>
                     <td>{{ stats.attendance[4].date }}</td>
-                    <td>{{ stats.attendance[4].status }}</td>
+                    <td>
+                        <div class="td-bg" :style="changeBackground(stats)">
+                            {{ stats.attendance[4].status }}
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -60,6 +64,9 @@ td {
     text-align: center;
     border-bottom: 1px solid #2c3e50;
 }
+.td-bg{
+    border-radius: 5px;
+}
 @media screen and (max-width: 768px) {
     .heading{
         margin-left: 12%;
@@ -91,7 +98,16 @@ export default {
         }
     },
     methods: {
-        
+        changeBackground(stats) {
+        if (stats.attendance[4].status === 'Present') {
+            return { backgroundColor: 'green', color: 'white' };
+        } else if (stats.attendance[4].status === 'Absent') {
+            return { backgroundColor: 'red', color: 'white' };
+        } else if (stats.attendance[4].status === 'N/A') {
+            return { backgroundColor: 'orange', color: 'white' };
+        }
+        return {};
+    }
     }
 }
 

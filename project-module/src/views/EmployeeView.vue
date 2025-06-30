@@ -130,6 +130,7 @@ export default {
 }
 
 h3 {
+  font-size: 30px !important;
   font-weight: 400px;
   color: #111;
 }
@@ -194,5 +195,15 @@ body {
 .btn{
   background-color: #2d4257;
   color: white;
+}
+@media screen and (max-width: 780px) {
+  .center-wrapper{
+    margin-left: 30px !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  .center-wrapper{
+    margin-left: 40px !important;
+  }
 }
 </style>
