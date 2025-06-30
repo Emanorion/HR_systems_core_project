@@ -40,4 +40,9 @@ export default {
     .i-arrow{
         color: #2d4257;
     }
+    @media screen and (max-width: 1024px){
+        .pageTitle{
+            font-size: 40px;
+        }
+    }
 </style>

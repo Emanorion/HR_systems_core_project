@@ -163,5 +163,14 @@ export default {
         padding: 10px;
     }
 }
-
+@media screen and (max-width: 480px) {
+    .bottom{
+        width: 15%;
+    }
+    .top{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
 </style>

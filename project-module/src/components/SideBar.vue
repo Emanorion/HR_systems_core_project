@@ -5,8 +5,8 @@
         </div>
         <div class="items">
             <ul>
-                    <li class="icon sidebar-item"><router-link to="/payroll"><i class="fa fa-credit-card"></i></router-link><router-link to="/payroll"class="dash-link">Payroll</router-link></li>
-                    <li class="icon sidebar-item"><router-link to="/Employees"><i class="fa fa-user" aria-hidden="true"></i></router-link><router-link to="/Employees"
+                    <li class="icon sidebar-item":class="{ active: $route.path === '/payroll' }"><router-link to="/payroll"><i class="fa fa-credit-card"></i></router-link><router-link to="/payroll"class="dash-link">Payroll</router-link></li>
+                    <li class="icon sidebar-item":class="{ active: $route.path === '/Employees' }"><router-link to="/Employees"><i class="fa fa-user" aria-hidden="true"></i></router-link><router-link to="/Employees"
                         class="dash-link">Employees</router-link></li>
                     <li class="icon sidebar-item":class="{ active: $route.path === '/overview' }"><router-link to="/overview"><i class="fa fa-bar-chart" aria-hidden="true"></i></router-link><router-link to="/overview"
                         class="dash-link">Overview</router-link></li>
@@ -65,7 +65,6 @@ export default {
 .sidebar-item.active {
     background-color: #2c3e50;
 }
-
 .dashItems {
     background-color: rgba(128, 128, 128, 0.497);
 

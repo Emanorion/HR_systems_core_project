@@ -93,8 +93,17 @@ td {
     padding-bottom: 10px;
     border-bottom: 1px solid #2c3e50;
     font-weight: 400;
+    align-content: center;
 }
 .td-background{
     border-radius: 5px;
+}
+@media screen and (max-width: 768px) {
+    .td-background{
+        padding: 2px;
+    }
+    td{
+        padding: 2px;
+    }
 }
 </style>

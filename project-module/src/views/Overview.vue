@@ -87,6 +87,8 @@ export default {
     .cont{
         width: 100%;
         margin-bottom: 20px;
+        display: flex;
+
     }
     .rev-card-item{
         width: 97%;
@@ -97,6 +99,7 @@ export default {
     .cont{
         display: flex;
         flex-direction: column;
+        margin-left: 20px;
     }
 }
 </style>

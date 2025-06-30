@@ -199,6 +199,14 @@ export default {
     .a-l-a{
         text-align: center;
     }
+    .attendanceCard{
+        width: 50%;
+    }
 }
-
+@media screen and (max-width: 480px) {
+    .attendanceCard{
+        width: 100%;
+        margin: 10px 0 0 0;
+    }
+}
 </style>

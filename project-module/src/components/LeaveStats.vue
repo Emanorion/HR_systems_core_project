@@ -154,5 +154,15 @@ button {
         font-size: 1rem;
     }
 }
+@media screen and (max-width: 480px) {
+    .card2{
+        width: 100%;
+    }
+    .leaveCard{
+        width: 90%;
+        display: flex;
+        font-size: 1rem;
+    }
+}
 
 </style>

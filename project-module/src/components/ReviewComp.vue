@@ -270,5 +270,28 @@ h3{
     .p-icon{
         margin-top: 2px;
     }
+    .pg-title{
+        margin-left: 90px;
+    }
+    .r-stats{
+        margin-left: 90px;
+    }
+    .heading{
+        margin-left: 90px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .r-stats{
+        display: flex;
+        flex-direction: column;
+        margin-left: 65px;
+    }
+    .r-card1, .r-card2{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .heading{
+        margin-left: 65px;
+    }
 }
 </style>
