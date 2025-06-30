@@ -4,7 +4,7 @@
             <i class="i-arrow fa fa-arrow-left fa-lg" aria-hidden="true"></i>
         </router-link>
     </div> -->
-    <h1 class="pageTitle">THis is the overeall attendance</h1>
+    <h1 class="pageTitle">This is the overeall attendance</h1>
     <EmployeeOverallAttendance />
     <SideBar />
 </template>

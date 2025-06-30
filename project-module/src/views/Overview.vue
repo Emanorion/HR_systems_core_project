@@ -93,5 +93,10 @@ export default {
         height: 500px;
     }
 }
-
+@media screen and (max-width: 480px){
+    .cont{
+        display: flex;
+        flex-direction: column;
+    }
+}
 </style>

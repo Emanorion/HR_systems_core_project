@@ -6,7 +6,7 @@
   <div class="d-flex justify-content-between flex-wrap gap-3">
     <div class="card d-flex" style="width: 18rem">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">approved</li>
+        <li class="list-group-item">Approved</li>
         <li class="list-group-item">5</li>
       </ul>
     </div>
@@ -53,7 +53,10 @@ export default {
 </script>
 
 <style>
-
+.card{
+  font-weight: 500;
+  background-color: #2c3e50;
+}
 
 
 </style>
