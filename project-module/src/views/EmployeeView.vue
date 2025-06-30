@@ -1,5 +1,15 @@
 <template>
   <SideBar />
+
+  <!-- Search bar with v-model -->
+  <div style="display: flex; justify-content: center;">
+    <input type="text" placeholder="search" v-model="searchTerm">
+    <button>
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+
+
   <!-- Main background container with background image and minimum height -->
   <div
     style="
@@ -56,11 +66,11 @@
       </div>
     </div>
 
-    <!-- Main card displaying selected employee's info -->
-    <div class="center-wrapper " style="margin-left: 190px;    flex-wrap: wrap; gap: 24px">
+    <!-- Main card displaying filtered employee(s) info -->
+    <div class="center-wrapper " style="margin-left: 190px; flex-wrap: wrap; gap: 24px">
       <div
         class="card shadow-lg "
-        v-for="employee in employee_info"
+        v-for="employee in filteredEmployees"
         :key="employee.employeeId"
         style="height: auto; width: 300px; margin: 12px"
       >
@@ -102,7 +112,18 @@ export default {
       employee_info: employee_info, // Array of employee objects
       selectedIndex: 0, // Index of the currently selected employee
       showModal: false, // Controls modal visibility
+      searchTerm: "",   // Search input value
     };
+  },
+  computed: {
+    // Returns employees whose names match the search term (case-insensitive)
+    filteredEmployees() {
+      if (!this.searchTerm) return this.employee_info;
+      return this.employee_info.filter(emp =>
+        emp.name &&
+        emp.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
+    }
   },
   methods: {
     // Sets the selected employee index
